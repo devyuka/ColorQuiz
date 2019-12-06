@@ -35,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         score =  0
         colorNameArray = arrayListOf<String>("BLUE", "GREEN", "YELLOW", "CYAN","MAGENTA", "RED", "DARKGRAY", "GRAY", "WHITE", "BLACK")
         colorCodeArray = arrayListOf<Int>(Color.BLUE, Color.GREEN, Color.YELLOW, Color.CYAN, Color.MAGENTA, Color.RED, Color.DKGRAY, Color.GRAY, Color.WHITE, Color.BLACK)
+        btnLeft = findViewById(R.id.btnLeft)
+        btnLeft.setEnabled(true)
+        btnRight = findViewById(R.id.btnRight)
+        btnRight.setEnabled(true)
         btnRetry = findViewById(R.id.retryBtn)
         btnRetry.setVisibility(View.INVISIBLE)
         showQuestion()
@@ -89,6 +93,10 @@ class MainActivity : AppCompatActivity() {
 
         if(colorNameArray.size == 0){
             Toast.makeText(this, "Your score is $score", Toast.LENGTH_LONG ).show()
+            btnLeft = findViewById(R.id.btnLeft)
+            btnLeft.setEnabled(false)
+            btnRight = findViewById(R.id.btnRight)
+            btnRight.setEnabled(false)
             btnRetry = findViewById(R.id.retryBtn)
             btnRetry.setVisibility(View.VISIBLE)
         }else {
